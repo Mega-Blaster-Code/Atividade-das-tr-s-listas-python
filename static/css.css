@@ -1,104 +1,130 @@
 :root {
-    --primary-color: #212227;
-    --secondary-color: #2e3544;
-    --border-color: #374358;
-    --shadow-color: #ffffff00;
-    --text-color: #ffffff;
+	--primary-color: #212227;
+	--secondary-color: #2e3544;
+	--border-color: #374358;
+	--shadow-color: #ffffff00;
+	--text-color: #ffffff;
+
+	--button-primary: #224299;
+	--button-border-color: #466aa9;
+}
+
+@font-face {
+	font-family: "JetBrainsMono";
+	src: url("JetBrainsMono-Light.ttf");
 }
 
 body {
-    font-family: sans-serif;
-    background: var(--primary-color);
-    color: #ffffff;
+	font-family: 'JetBrainsMono';
+	letter-spacing: -1px;
+	background: var(--primary-color);
+	color: #ffffff;
 }
 
 .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 .box {
-    width: 80%;
-    height: 90%;
-    background-color: var(--secondary-color);
-    border-radius: 10px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: var(--border-color);
+	width: 80%;
+	height: 90%;
+	background-color: var(--secondary-color);
+	border-radius: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: var(--border-color);
 
-    color: #ffffff;
+	color: #ffffff;
 
-    padding: 15px;
+	padding: 15px;
 
-    box-shadow: 0px 0px 15px var(--shadow-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: justify;
+	box-shadow: 0px 0px 15px var(--shadow-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: justify;
 }
 
 .fit_box {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 
-    color: #ffffff;
-    column-gap: 20px;
+	color: #ffffff;
+	column-gap: 20px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    text-align: justify;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	text-align: justify;
 }
 
 .text_box {
-    width: 70%;
-    height: auto;
+	width: 70%;
+	height: auto;
 
-    color: #ffffff;
+	color: #ffffff;
 
-    padding: 15px;
+	padding: 15px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: justify;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: justify;
 }
 
-p{
-    font-size: 15px;
-    font-family:'Courier New', Courier, monospace;
-    font-weight: 100;
+.fill {
+	flex-grow: 1;
+	height: 200px;
 }
-h1{
-    font-size: 50px;
-    font-family:monospace;
-    font-weight: 900;
+
+button {
+	color: var(--text-color);
+	background-color: var(--button-primary);
+	border-radius: 5px;
+	border-style: solid;
+	border-color: var(--button-border-color);
+	transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, scale 0.1s ease-in-out;
 }
-h2{
-    color: rgb(50, 50, 50);
-    font-size: 10px;
-    font-family:monospace;
-    font-weight: 100;
+
+button:hover {
+	scale: 1.2;
 }
-h3{
-    color: rgb(40, 70, 70);
-    font-size: 11px;
-    font-family:monospace;
-    font-weight: 100;
+
+p {
+	font-size: 15px;
+	font-family: 'JetBrainsMono', 'Courier New', Courier, monospace;
+	font-weight: 100;
 }
-hr{
-    width: 80%;
-    height: 1px;
-    background-color: rgb(255, 255, 255);
-    border-style: none;
+
+h1 {
+	font-size: 50px;
+	font-family: 'JetBrainsMono', monospace;
+	font-weight: 900;
 }
-.fill{
-    flex-grow: 1;
-    height: 200px;
+
+h2 {
+	color: rgb(50, 50, 50);
+	font-size: 10px;
+	font-family: 'JetBrainsMono', monospace;
+	font-weight: 100;
+}
+
+h3 {
+	color: rgb(40, 70, 70);
+	font-size: 11px;
+	font-family: 'JetBrainsMono', monospace;
+	font-weight: 100;
+}
+
+hr {
+	width: 80%;
+	height: 1px;
+	background-color: rgb(255, 255, 255);
+	border-style: none;
 }
