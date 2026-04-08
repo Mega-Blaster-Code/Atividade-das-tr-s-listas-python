@@ -23,7 +23,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	flex-direction: row;
 }
 
 .box {
@@ -78,9 +78,26 @@ body {
 
 .fill {
 	display: grid;
-  grid-template-rows: auto 1fr auto; /* Middle row fills remaining space */
-  height: 100vh;
+	grid-template-rows: auto 1fr auto;
+	height: 100vh;
+}
 
+.card{
+	width: fit-content;
+	height: auto;
+
+	color: #ffffff;
+	column-gap: 20px;
+
+	background-color: rgb(255, 255, 255);
+	padding: 5px;
+	margin: 2px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	text-align: justify;
 }
 
 a, a:visited, a:hover, a:active {
