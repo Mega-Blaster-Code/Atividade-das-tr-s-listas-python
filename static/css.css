@@ -12,15 +12,8 @@
 	--button-hold: #7094d3;
 }
 
-@font-face {
-	font-family: "JetBrainsMono";
-	src: url("JetBrainsMono-Light.ttf") format("truetype");
-	font-weight: 300;
-	font-style: normal;
-}
-
 body {
-	font-family: 'JetBrainsMono', monospace;
+	font-family: monospace;
 	letter-spacing: -1px;
 	background: var(--primary-color);
 	color: #ffffff;
@@ -84,9 +77,18 @@ body {
 }
 
 .fill {
-	flex-grow: 1;
-	height: 200px;
+	display: grid;
+  grid-template-rows: auto 1fr auto; /* Middle row fills remaining space */
+  height: 100vh;
+
 }
+
+a, a:visited, a:hover, a:active {
+	color: inherit;
+	text-decoration: none !important;
+	border-style: none;
+}
+
 
 button {
 	font-size: 18px;
@@ -109,7 +111,7 @@ button:active{
 }
 
 p {
-	font-family: 'JetBrainsMono';
+	font-family: monospace;
 	font-size: 15px;
 	font-weight: 300;
 }
