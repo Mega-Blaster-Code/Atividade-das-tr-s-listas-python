@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+		<link rel="stylesheet" href="/static/css.css">
+	</head>
+
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg fixed-top">
+				<div class="container-fluid" id="text_navbar">
+					<div id="text-navbar">
+						<a class="navbar-brand" href="/" id="text_navbar">Minhas Listas</a>
+					</div>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+							<li class="nav-item dropdown" id="text_navbar">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #ffffff;">
+									Outras listas
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="/lista_conjuntos">Lista Conjuntos</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		
+		<main class="py-5" style="margin-top: 60px;">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-md-8 mx-auto">
+						<h1 class="mb-4">Lista de Itens</h1>
+						
+						<div class="card mb-4">
+							<div class="card-body">
+								<form action="{{url_for('principal')}}" method="post">
+									<div class="mb-3">
+										<label for="itemlo" class="form-label">Informe o item:</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="itemlo" id="itemlo" required/>
+											<button class="btn btn-primary" type="submit">Adicionar</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						
+						{% if lista_ordenada %}
+						<div class="card">
+							<div class="card-header">
+								<h5 class="mb-0">Itens Adicionados ({{ lista_ordenada|length }})</h5>
+							</div>
+							<div class="card-body">
+								<ol class="list-group list-group-numbered">
+									{% for itemlo in lista_ordenada %}
+									<li class="list-group-item">{{ itemlo }}</li>
+									{% endfor %}
+								</ol>
+							</div>
+						</div>
+						{% else %}
+						<div class="alert alert-info" role="alert">
+							Nenhum item adicionado ainda. Comece digitando um item acima!
+						</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="bg-dark py-4 mt-5 border-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 text-center">
+						<p class="text- mb-0" style="color: #ffffff;">© 2025 The Guild, Inc</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	</body>
+</html>

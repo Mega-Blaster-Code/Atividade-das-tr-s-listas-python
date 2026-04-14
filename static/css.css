@@ -98,6 +98,44 @@ button {
 	transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, scale 0.1s ease-in-out;
 }
 
+#text_navbar {
+	font-size: 18px;
+	color: #ffffff;
+}
+
+#text_card_descreption {
+	font-size: 14px;
+	font-family: 'JetBrainsMono', monospace;
+	color: #000000a4;
+}
+
+nav{
+	background-color: #1b40628b
+}
+
+/* Estilo para navbar e seus componentes */
+.navbar-brand {
+	color: #ffffff !important;
+}
+
+.nav-link {
+	color: #ffffff !important;
+}
+
+.nav-link:hover {
+	color: #ffffff !important;
+}
+
+.dropdown-item {
+	color: #ffffff;
+	background-color: #2e3544;
+}
+
+.dropdown-item:hover {
+	color: #ffffff;
+	background-color: #374358;
+}
+
 button:hover {
 	scale: 1.05;
 	background-color: var(--button-hover);
@@ -112,6 +150,7 @@ p {
 	font-family: 'JetBrainsMono';
 	font-size: 15px;
 	font-weight: 300;
+	color: white; /* Changed from text-color */
 }
 
 h1 {
