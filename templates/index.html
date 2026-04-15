@@ -18,12 +18,16 @@
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="/" id="text_navbar">Home</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#" id="text_navbar">Sobre</a>
+						<ul class="navbar-nav ms-auto">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+									Outras listas
+								</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="/lista">Filmes</a></li>
+									<li><a class="dropdown-item" href="/lista">Notas dos filmes</a></li>
+									<li><a class="dropdown-item" href="/conjuntos">Gêneros</a></li>
+								</ul>
 							</li>
 						</ul>
 					</div>
@@ -33,15 +37,15 @@
 		
 		<main class="py-5" style="margin-top: 60px;">
 			<div class="container">
-				<h1 class="mb-5 text-center">Bem-vindo às Minhas Listas</h1>
+				<h1 class="mb-5 text-center">Filmografia de 2026</h1>
 				
 				<div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
 					<div class="col">
 						<div class="card h-100 shadow-sm">
 							<img src="baixados.jpg" class="card-img-top" alt="Lista Ordenada" style="height: 200px; object-fit: cover;">
 							<div class="card-body d-flex flex-column">
-								<h5 class="card-title">Lista Ordenada</h5>
-								<p class="card-text flex-grow-1">Crie e gerencie uma lista ordenada de itens. Adicione, visualize e organize seus itens de forma simples.</p>
+								<h5 class="card-title">Filmes a serem assistidos</h5>
+								<p class="card-text flex-grow-1">Filmes pendentes que necessitam serem assistidos.</p>
 								<a href="/lista" class="btn btn-primary w-100">Acessar</a>
 							</div>
 						</div>
@@ -51,8 +55,8 @@
 						<div class="card h-100 shadow-sm">
 							<img src="baixados.jpg" class="card-img-top" alt="Card 2" style="height: 200px; object-fit: cover;">
 							<div class="card-body d-flex flex-column">
-								<h5 class="card-title">Próxima Lista</h5>
-								<p class="card-text flex-grow-1">Funcionalidade em desenvolvimento. Fique atento para novas funcionalidades que virão em breve.</p>
+								<h5 class="card-title">Nota dos filmes</h5>
+								<p class="card-text flex-grow-1">Nota dos filmes, postas no intervalo de 0 a 10.</p>
 								<button class="btn btn-outline-secondary w-100" disabled>Em Breve</button>
 							</div>
 						</div>
@@ -62,8 +66,8 @@
 						<div class="card h-100 shadow-sm">
 							<img src="baixados.jpg" class="card-img-top" alt="Card 3" style="height: 200px; object-fit: cover;">
 							<div class="card-body d-flex flex-column">
-								<h5 class="card-title">Lista Conjuntos</h5>
-								<p class="card-text flex-grow-1">Funcionalidade em desenvolvimento. Fique atento para novas funcionalidades que virão em breve.</p>
+								<h5 class="card-title">Gêneros que mais gostei</h5>
+								<p class="card-text flex-grow-1">Gêneros que nais causaram emoções positivas.</p>
 								<a href="/conjuntos" class="btn btn-primary w-100">Acessar</a>
 							</div>
 						</div>
