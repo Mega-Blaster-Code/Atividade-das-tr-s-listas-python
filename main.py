@@ -2,69 +2,60 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# ============================================
-# ARMAZENAMENTO DE DADOS (EM MEMÓRIA)
-# ============================================
 lista_ordenada = []
 conjunto = set()
+lista_chaveada = {}
 
-# ============================================
-# FUNÇÕES PARA ADICIONAR ITENS NAS LISTAS
-# ============================================
-def adicionar_item_lista_ordenada(item):
-    """Adiciona um item na lista ordenada"""
+def add_array_item(item: str) -> bool:
     if item and item.strip():
         lista_ordenada.append(item.strip())
         return True
     return False
 
-
-def adicionar_item_conjunto(item):
-    """Adiciona um item na lista de tarefas"""
+def add_item_conjunto(item: str) -> bool:
     if item and item.strip():
         conjunto.add(item)
         return True
     return False
 
+def add_item_dictionary(key: str, item: str) -> bool:
+    if item and item.strip():
+        lista_chaveada[key] = item
+        return True
+    return False
 
-# ============================================
-# ROTAS (PÁGINA INICIAL E CSS)
-# ============================================
 @app.route("/", methods=["GET"])
 def main():
-    """Rota para a página inicial"""
-    print("INDEX HTML")
     return render_template("index.html")
 
 
 @app.route("/css.css")
 def main_css():
-    """Rota para o arquivo CSS"""
-    print("CSS")
     return render_template("css.css")
 
-
-# ============================================
-# ROTAS PARA AS LISTAS
-# ============================================
 @app.route("/lista", methods=["GET", "POST"])
-def principal():
-    """Rota para Lista Ordenada"""
-    print("LISTA ORDENADA")
+def filmes_a_ser_assistido():
     if request.method == "POST":
         itemlo = request.form.get("itemlo")
-        adicionar_item_lista_ordenada(itemlo)
+        add_array_item(itemlo)
     return render_template("lista_ordenada.html", lista_ordenada=lista_ordenada)
 
-
 @app.route("/conjuntos", methods=["GET", "POST"])
-def tarefas():
-    """Rota para Lista Conjuntos"""
+def generos_mais_gostei():
     print("LISTA CONJUNTOS")
     if request.method == "POST":
         item = request.form.get("item_conjunto")
-        adicionar_item_conjunto(item)
+        add_item_conjunto(item)
     return render_template("lista_conjuntos.html", conjunto=conjunto)
+
+@app.route("/chaveada", methods=["GET", "POST"])
+def nota_filmes():
+    print("LISTA CHAVEADA")
+    if request.method == "POST":
+        item = request.form.get("item_chaveada")
+        key = request.form.get("key_chaveada")
+        add_item_dictionary(key, item)
+    return render_template("lista_chaveada.html", lista_chaveada=lista_chaveada)
 
 
 

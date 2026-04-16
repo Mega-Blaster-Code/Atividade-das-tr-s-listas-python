@@ -23,9 +23,9 @@
 				</button>
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav ms-auto">
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+					<ul class="navbar-nav ms-auto bg-light">
+						<li class="nav-item dropdown bg-light">
+							<a class="nav-link dropdown-toggle bg-light" href="#" data-bs-toggle="dropdown">
 								Outras listas
 							</a>
 							<ul class="dropdown-menu">
@@ -39,7 +39,6 @@
 		</nav>
 	</header>
 
-	<!-- MAIN PADRONIZADO -->
 	<main class="center" style="margin-top: 70px; padding: 20px;">
 
 		<div class="box">
@@ -48,7 +47,6 @@
 
 			<hr>
 
-			<!-- FORM -->
 			<form action="{{url_for('tarefas')}}" method="post" class="fit_box">
 				<input 
 					type="text" 
@@ -64,7 +62,6 @@
 
 			<hr>
 
-			<!-- LISTA -->
 			{% if conjunto %}
 				<div class="text_box">
 					<h2>Itens ({{ conjunto|length }})</h2>
@@ -84,7 +81,7 @@
 	</main>
 
 	<footer class="center">
-		<p>© 2025 The Guild, Inc</p>
+		<p>© 2026 The Guild, Inc</p>
 	</footer>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

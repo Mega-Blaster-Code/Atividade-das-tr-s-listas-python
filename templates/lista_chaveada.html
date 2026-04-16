@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Minhas Listas</title>
+	<title>Lista de Tarefas</title>
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="/static/css.css">
@@ -30,7 +30,7 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="/lista">Notas dos filmes</a></li>
-								<li><a class="dropdown-item" href="/conjuntos">Gêneros</a></li>
+								<li><a class="dropdown-item" href="/">Home</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -43,12 +43,14 @@
 
 		<div class="box">
 
-			<h1>Lista de Itens</h1>
+			<h1>Lista de Tarefas</h1>
 
 			<hr>
 
-			<form action="{{url_for('principal')}}" method="post" class="fit_box">
-				<input type="text" name="itemlo" id="itemlo" required class="form-control"
+			<form action="{{url_for('nota_filmes')}}" method="post" class="fit_box">
+				<input type="text" name="item_chaveada" id="item_chaveada" required class="form-control"
+					placeholder="Digite uma chave...">
+				<input type="text" name="key_chaveada" id="key_chaveada" required class="form-control"
 					placeholder="Digite um item...">
 
 				<button type="submit">Adicionar</button>
@@ -56,20 +58,31 @@
 
 			<hr>
 
-			{% if lista_ordenada %}
-				<div class="text_box">
-					<h2>Itens ({{ lista_ordenada|length }})</h2>
+			{% if lista_chaveada %}
+			<div class="text_box">
+				<h2>Itens ({{ conjunto|length }})</h2>
 
-					<ol>
-						{% for itemlo in lista_ordenada %}
-							<li>{{ itemlo }}</li>
+				<table>
+					<thead>
+						<tr>
+							<th>Valor</th>
+							<th>Chave</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for key in lista_chaveada.keys() %}
+						<tr>
+							<td>{{ lista_chaveada[key] }}</td>
+							<td>{{ key }}</td>
+						</tr>
 						{% endfor %}
-					</ol>
-				</div>
-			{% else %}
-				<p>Nenhum item ainda. Comece digitando acima.</p>
-			{% endif %}
+					</tbody>
+				</table>
 
+			</div>
+			{% else %}
+			<p>Nenhum item presente!</p>
+			{% endif %}
 		</div>
 
 	</main>
