@@ -28,7 +28,6 @@ def add_item_dictionary(key: str, item: str) -> bool:
 def main():
     return render_template("index.html")
 
-
 @app.route("/css.css")
 def main_css():
     return render_template("css.css")
@@ -57,17 +56,18 @@ def nota_filmes():
         add_item_dictionary(key, item)
     return render_template("lista_chaveada.html", lista_chaveada=lista_chaveada)
 
+@app.route("/assitir.jpg", methods=["GET"])
+def assistir_img():
+    return render_template("assistir.jpg")
 
+@app.route("/nota.png", methods=["GET"])
+def nota_img():
+    return render_template("nota.png")
 
+@app.route("/like.jpg", methods=["GET"])
+def like_img():
+    return render_template("like.jpg")
 
-
-# ============================================
-# NÂO MEXER JAMAIS 
-# ============================================
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-# ============================================
-# NÂO MEXER JAMAIS 
-# ============================================

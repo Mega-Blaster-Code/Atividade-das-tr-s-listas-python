@@ -83,29 +83,8 @@ li {
 }
 
 a, a:visited, a:hover, a:active {
-	color: inherit;
+	color: #ffffff;
 	text-decoration: none !important;
-}
-
-button {
-	font-size: 16px;
-	color: var(--text-color);
-	background-color: var(--button-primary);
-	border-radius: 5px;
-	border: 1px solid var(--button-border-color);
-	padding: 6px 12px;
-	cursor: pointer;
-	transition: all 0.1s ease-in-out;
-}
-
-button:hover {
-	transform: scale(1.05);
-	background-color: var(--button-hover);
-}
-
-button:active {
-	transform: scale(0.95);
-	background-color: var(--button-hold);
 }
 
 nav {
