@@ -6,6 +6,11 @@ lista_ordenada = []
 conjunto = set()
 lista_chaveada = {}
 
+
+
+
+
+
 def add_array_item(item: str) -> bool:
     if item and item.strip():
         lista_ordenada.append(item.strip())
@@ -23,6 +28,10 @@ def add_item_dictionary(key: str, item: str) -> bool:
         lista_chaveada[key] = item
         return True
     return False
+
+
+
+
 
 @app.route("/", methods=["GET"])
 def main():
@@ -55,6 +64,11 @@ def nota_filmes():
         key = request.form.get("key_chaveada")
         add_item_dictionary(key, item)
     return render_template("lista_chaveada.html", lista_chaveada=lista_chaveada)
+
+
+
+
+
 
 @app.route("/assitir.jpg", methods=["GET"])
 def assistir_img():
